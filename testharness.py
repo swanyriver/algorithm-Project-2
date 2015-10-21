@@ -49,4 +49,5 @@ def runTests(func):
         print used
         eq = [used[i] * coins[i] for i in range(len(coins))]
         print eq, '=', sum(eq)
+        print "coins used:  ", sum(used)
         print '-------------------------------------------------'

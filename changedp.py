@@ -3,7 +3,7 @@ import testharness
 def changedp(coins,amount):
     result = [0] * len(coins)
 
-    minCoins = [0] + [amount+1] * amount
+    minCoins = [0] + [float('inf')] * amount
     trace = [0] * (amount + 1)
 
     for tableIndex in xrange(1,amount+1):
