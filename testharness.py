@@ -1,4 +1,5 @@
-from sys import argv,stdout,exit
+from sys import argv,exit
+import sys
 import string
 
 #check for provided input file
@@ -25,15 +26,18 @@ def fileTests():
         coins = testcasesF.readline()
         amount = testcasesF.readline()
 
-    if coins and amount:
+        if coins and amount:
 
-        coins = [int(num) for num in coins.translate(None,BADCHARS).split(',')
-        amount = int(amount.translate(None,BADCHARS+','))
+            coins = [int(num) for num in coins.translate(None,BADCHARS).split(',')]
+            amount = int(amount.translate(None,BADCHARS+','))
 
-        yield coins,amount
+            yield coins,amount
 
-    else break
+        else: break
 
 
 def runTests(func):
-    
+    for coins,amount in fileTests():
+        used = func(coins,amount)
+        print used
+        print sum(used)
