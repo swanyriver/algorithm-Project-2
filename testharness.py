@@ -16,7 +16,7 @@ if not testcasesF:
     exit(1)
 
 #redirect standard output to file
-sys.stdout = open(argv[1] + 'change.txt', 'w')
+#sys.stdout = open(argv[1] + 'change.txt', 'w')
 
 
 BADCHARS = string.maketrans('','').translate(None,'0123456789,')
@@ -29,6 +29,7 @@ def fileTests():
         if coins and amount:
 
             coins = [int(num) for num in coins.translate(None,BADCHARS).split(',')]
+            coins.sort()
             amount = int(amount.translate(None,BADCHARS+','))
 
             yield coins,amount
@@ -39,5 +40,13 @@ def fileTests():
 def runTests(func):
     for coins,amount in fileTests():
         used = func(coins,amount)
+        
+        #requested output
+        #print used
+        #print sum(used)
+
+        print coins, amount
         print used
-        print sum(used)
+        eq = [used[i] * coins[i] for i in range(len(coins))]
+        print eq, '=', sum(eq)
+        print '-------------------------------------------------'
