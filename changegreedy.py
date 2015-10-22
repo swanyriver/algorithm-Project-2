@@ -1,5 +1,3 @@
-import testharness
-
 def greddychange(coins,amount):
     result = [0] * len(coins)
 
@@ -21,5 +19,6 @@ def greddyItter(coins,amount):
 
     return result
 
-
-testharness.runTests(greddychange)
+if __name__ == '__main__':
+    import testharness
+    testharness.runTests(greddychange)

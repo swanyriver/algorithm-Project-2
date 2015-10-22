@@ -1,5 +1,3 @@
-import testharness
-
 def changedp(coins,amount):
     result = [0] * len(coins)
 
@@ -23,4 +21,6 @@ def changedp(coins,amount):
 
     return result
 
-testharness.runTests(changedp)
+if __name__ == '__main__':
+    import testharness
+    testharness.runTests(changedp)

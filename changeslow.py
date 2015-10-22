@@ -1,6 +1,3 @@
-import testharness
-from operator import add
-
 def changeslow(coins,amount):
     result = [0] * len(coins)
 
@@ -25,4 +22,8 @@ def changeslow(coins,amount):
 
     return min( ( map(add,changeslow(coins,i),changeslow(coins,amount-i)) for i in range(1,amount) ) , key=sum )
 
-testharness.runTests(changeslow)
+
+if __name__ == '__main__':
+    import testharness
+    from operator import add
+    testharness.runTests(changeslow)
