@@ -2,9 +2,9 @@ def greddychange(coins,amount):
     result = [0] * len(coins)
 
     for i in xrange(len(coins)-1,-1,-1):
-        coinsused = amount//coins[i]
-        amount -= coinsused * coins[i]
-        result[i] = coinsused
+        # #coins[i] used = amount/coins[i]
+        # amount = remainder, or amount - (amount//coins[i]) * coins[i]
+        result[i],amount = divmod(amount,coins[i])
 
     return result
 
