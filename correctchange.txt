@@ -1,0 +1,30 @@
+15
+returned coin: 1
+14
+returned coin: 1
+13
+returned coin: 1
+12
+returned coin: 1
+11
+returned coin: 1
+10
+returned coin: 1
+9
+returned coin: 1
+returned coin: 8
+returned coin: 2
+7
+returned coin: 1
+6
+returned coin: 1
+5
+returned coin: 1
+returned coin: 4
+returned coin: 2
+returned coin: 4
+returned coin: 2
+5
+returned coin: 1
+returned coin: 4
+3

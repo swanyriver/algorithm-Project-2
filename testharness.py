@@ -42,12 +42,13 @@ def runTests(func):
         used = func(coins,amount)
         
         #requested output
-        #print used
-        #print sum(used)
-
-        print coins, amount
         print used
-        eq = [used[i] * coins[i] for i in range(len(coins))]
-        print eq, '=', sum(eq)
-        print "coins used:  ", sum(used)
-        print '-------------------------------------------------'
+        print sum(used)
+
+        #testing for correctness output
+        # print coins, amount
+        # print used
+        # eq = [used[i] * coins[i] for i in range(len(coins))]
+        # print eq, '=', sum(eq)
+        # print "coins used:  ", sum(used)
+        # print '-------------------------------------------------'

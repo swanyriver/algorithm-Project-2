@@ -4,8 +4,11 @@ def changeslow(coins,amount):
     #base case
     for i in range(len(coins)):
         if coins[i] == amount:
+            #print "returned coin: " + str(coins[i])
             result[i] = 1
             return result
+
+    print amount
 
     bestmin = float('inf')
     
@@ -20,7 +23,7 @@ def changeslow(coins,amount):
 
     # return result
 
-    return min( ( map(add,changeslow(coins,i),changeslow(coins,amount-i)) for i in range(1,amount) ) , key=sum )
+    return min( ( map(add,changeslow(coins,i),changeslow(coins,amount-i)) for i in range(1,amount//2) ) , key=sum )
 
 
 if __name__ == '__main__':
