@@ -8,8 +8,6 @@ def changeslow(coins,amount):
             result[i] = 1
             return result
 
-    print amount
-
     bestmin = float('inf')
     
     #recursive case
@@ -23,7 +21,7 @@ def changeslow(coins,amount):
 
     # return result
 
-    return min( ( map(add,changeslow(coins,i),changeslow(coins,amount-i)) for i in range(1,amount//2) ) , key=sum )
+    return min( ( map(add,changeslow(coins,i),changeslow(coins,amount-i)) for i in range(1,amount//2+1) ) , key=sum )
 
 
 if __name__ == '__main__':
