@@ -1,4 +1,4 @@
-def greddychange(coins,amount):
+def changegreedy(coins,amount):
     result = [0] * len(coins)
 
     for i in xrange(len(coins)-1,-1,-1):
@@ -21,4 +21,4 @@ def greddyItter(coins,amount):
 
 if __name__ == '__main__':
     import testharness
-    testharness.runTests(greddychange)
+    testharness.runTests(changegreedy)
