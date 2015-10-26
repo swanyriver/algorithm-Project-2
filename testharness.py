@@ -16,7 +16,7 @@ if not testcasesF:
     exit(1)
 
 #redirect standard output to file
-#sys.stdout = open(argv[1] + 'change.txt', 'w')
+sys.stdout = open(argv[1] + 'change.txt', 'w')
 
 
 BADCHARS = string.maketrans('','').translate(None,'0123456789,')

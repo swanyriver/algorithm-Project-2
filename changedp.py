@@ -7,7 +7,7 @@ def changedp(coins,amount):
     for tableIndex in xrange(1,amount+1):
         coinIndex = 0
         while coinIndex < len(coins) and coins[coinIndex] <= tableIndex:
-            if minCoins[tableIndex-coins[coinIndex]] < minCoins[tableIndex]:
+            if minCoins[tableIndex-coins[coinIndex]] + 1 < minCoins[tableIndex]:
                 minCoins[tableIndex] = minCoins[tableIndex-coins[coinIndex]]+1
                 trace[tableIndex]=coinIndex
             coinIndex+=1

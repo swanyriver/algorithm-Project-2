@@ -1,8 +1,15 @@
+## in order to get more recordable times this algorithm has been 
+## optimized for python by using inplied loops wherever possible
+## also instead of returning an array of coin totals during recursion
+## the recursive function returns a list of coins used that are then tallied
+## by the original function
+##
+## it is still of course very slow
 def best(tupleoflists):
     return len(tupleoflists[0]) + len(tupleoflists[1])
 
 def slowhelper(coins,amount):
-    if amount in coins: return [amount]
+    if amount in coins: return [coins.index(amount)]
 
     bestki = min( ( (slowhelper(coins,i),slowhelper(coins,amount-i)) for i in range(1,amount//2+1) ), key = best )
 
@@ -15,10 +22,10 @@ def changeslow(coins,amount):
     result = [0] * len(coins)
 
     coinsused = slowhelper(coins,amount)
-    indexes = {}
-    for i in range(len(coins)): indexes[coins[i]]=i
 
-    for c in coinsused: result[indexes[c]]+=1
+    #turn returned array of coin values used into 
+    for i in coinsused:
+        result[i]+=1
 
     return result
 
