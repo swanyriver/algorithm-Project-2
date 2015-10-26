@@ -21,10 +21,10 @@ def slowhelper(coins,amount):
 def changeslow(coins,amount):
     result = [0] * len(coins)
 
-    coinsused = slowhelper(coins,amount)
+    coinsUsed = slowhelper(coins,amount)
 
     #turn returned array of coin values used into 
-    for i in coinsused:
+    for i in coinsUsed:
         result[i]+=1
 
     return result
