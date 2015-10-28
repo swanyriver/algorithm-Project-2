@@ -7,7 +7,7 @@ vB = [1, 6, 13, 37, 150]
 
 print "amount, greedy coins v1, greedy time v1, dp coins v1, dp time v1, greedy coins v2, greedy time v2, dp coins v2, dp time v2, "
 
-for amount in range(2010,2201):
+for amount in range(2000,2201):
   print amount,",",
   print sum(changegreedy(vA,amount)),",",
   print timeit.timeit(stmt='changegreedy.changegreedy(%s,%s)'%(str(vA),str(amount)),setup="import changegreedy",timer=time.clock,number=1000),",",
