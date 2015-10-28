@@ -24,7 +24,7 @@ def cointimegreedy(values,amount):
   coins = changedp(values,amount)
   return sum(coins),outtime
 
-cointime = cointimegreedy
+
 
 
 valueset = [
@@ -34,14 +34,23 @@ valueset = [
 [1] + range(2,31,2), 
 ]
 
-print "amount,",
-for v in valueset[:-1]: print "\"%s:Coins\",\"%s:Time\","%(str(v),str(v)),
-print "\"%s:Coins\",\"%s:Time\""%(str(valueset[-1]),str(valueset[-1]))
+
+#print "amount,",
+#for v in valueset[:-1]: print "\"%s:Coins\",\"%s:Time\","%(str(v),str(v)),
+#print "\"%s:Coins\",\"%s:Time\""%(str(valueset[-1]),str(valueset[-1]))
+
+# for amount in range(10,31) + [35]:
+#   print amount,",",
+#   for v in valueset[:-1]: print "%d,%f,"%cointime(v,amount),
+#   print "%d,%f"%cointime(valueset[-1],amount)
+
+print "amount, slowtime, greedytime, dptime"
 
 for amount in range(10,31) + [35]:
   print amount,",",
-  for v in valueset[:-1]: print "%d,%f,"%cointime(v,amount),
-  print "%d,%f"%cointime(valueset[-1],amount)
+  print cointime([1],amount)[1],
+  print cointimegreedy([1],amount)[1],
+  print cointimedp([1],amount)[1]
 
 
 
