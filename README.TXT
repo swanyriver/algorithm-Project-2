@@ -18,4 +18,6 @@ A=15 few milliseconds
 A=29 a few minutes
 A=31 ~10 minutes
 A=40 >20 hours
- 
+
+
+the "experiments" directory contains scripts used to test for correctness and record coin amounts and run times 
